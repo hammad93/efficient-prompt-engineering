@@ -2,16 +2,9 @@ import gzip
 import base64
 
 # Define the input prompt string
-prompt = "This is an example prompt that we want to compress using gzip."
+prompt = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 
-# Compress the input prompt using gzip
-compressed_prompt = gzip.compress(prompt.encode())
+encoded_bytes = prompt.encode('utf-8')
+encoded_string = base64.b64encode(encoded_bytes).decode('utf-8')
 
-# Encode the compressed prompt as a Base64 string
-encoded_prompt = base64.b64encode(compressed_prompt).decode()
-
-# Format the output string that can be copied and pasted into ChatGPT
-output_str = f"compressed:{encoded_prompt}"
-
-# Print the output string
-print(output_str)
+print(f"This string is base64 encoded, please decode it in utf-8 format, {encoded_string}")
