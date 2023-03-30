@@ -1,6 +1,19 @@
 # efficient-prompt-engineering
 Scripts that can output compressed and efficient prompts for scalable usage in chat based generative models including ChatGPT
 
+## Quickstart
+
+Open the **run.py** Python file and change the prompt variable, `prompt`
+
+Ten in bash or terminal run the script,
+```
+python run.py
+```
+
+The output is meant to be copy-pasted into ChatGPT.
+
+## Overview
+
 In natural language processing, prompt engineering refers to the process of designing and optimizing input prompts that are used to generate language model output. One challenge of prompt engineering is that long prompts can be computationally expensive and may require significant resources to process.
 
 One solution to this problem is to use compression techniques to reduce the size of the input prompt while preserving its essential information. Gzip compression is one such technique that can be used to compress text data.
