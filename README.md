@@ -14,7 +14,10 @@ This string is base64 encoded, please decode it in utf-8 format, TG9yZW0gaXBzdW0
 ```
 
 ## Quickstart
-
+```
+pip install openai
+pip install statsmodels
+```
 Open the **run.py** Python file and change the prompt variable, `prompt`
 
 Ten in bash or terminal run the script,
