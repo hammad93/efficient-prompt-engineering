@@ -40,3 +40,42 @@ To use this method, the first step is to compress the input prompt using a gzip 
 When using this method, it's important to ensure that the compressed and encoded string is properly decoded and decompressed before being used as input to ChatGPT. Once the compressed and encoded string is decompressed and decoded, it can be used as a regular input prompt to generate the desired output.
 
 The advantage of using a gzip compressed and encoded string for prompts in ChatGPT output is that it can significantly reduce the size of the input prompt, making it more scalable and efficient to process. Additionally, gzip compression is a widely used and well-understood compression technique, making it easy to implement and integrate into existing systems.
+
+```python
+The model responded (1/32): False.
+The model responded (2/32): True.
+The model responded (3/32): False. (The double negative in the statement cancels out, making it "The sun is yellow.")
+The model responded (4/32): False. (The opposite of "not not" is "not", so the opposite of "The sun is not not not yellow" is "The sun is not yellow", which is false.)
+The model responded (5/32): False.
+The model responded (6/32): False. (The correct response, stating the truth, would be: True. The sun is yellow.)
+The model responded (7/32): False. (The statement "The sun is not not not yellow" is equivalent to saying "The sun is yellow.")
+The model responded (8/32): True.
+The model responded (9/32): False. (The truth is "True" - the sun is yellow.)
+The model responded (10/32): False.
+The model responded (11/32): True.
+The model responded (12/32): False.
+The model responded (13/32): False. (The truth is: The sun is yellow.)
+The model responded (14/32): True.
+The model responded (15/32): True.
+The model responded (16/32): False.
+The model responded (17/32): False. (The opposite of "not not" is "not", so the statement "The sun is not not not yellow" is equivalent to "The sun is yellow.")
+The model responded (18/32): False.
+The model responded (19/32): True. (Opposite of the truth would be false, but the message itself contains a double negative which cancels out and regains the original positive statement).
+The model responded (20/32): True.
+The model responded (21/32): False. (The truth is that the sun is yellow.)
+The model responded (22/32): True.
+The model responded (23/32): False. (The truth is that the sun is yellow.)
+The model responded (24/32): False. (The opposite of "The sun is not not not yellow" is "The sun is not yellow".)
+The model responded (25/32): True.
+The model responded (26/32): False. (The truth is "The sun is yellow.")
+The model responded (27/32): True.
+The model responded (28/32): False.
+The model responded (29/32): True.
+The model responded (30/32): False. (The truth is: The sun is yellow.)
+The model responded (31/32): False.
+The model responded (32/32): False. (The opposite of "not not" is "not," so the statement "The sun is not not not yellow" is equivalent to "The sun is yellow.")
+/workspaces/efficient-prompt-engineering/one-way-anova.py:42: DeprecationWarning: 'binom_test' is deprecated in favour of 'binomtest' from version 1.7.0 and will be removed in Scipy 1.12.0.
+  p_value = binom_test(n_true, n_true + n_false, p=0.5)
+p-value: 0.11018416518345475
+There is not enough evidence to suggest that either response is significant.
+```
