@@ -5,7 +5,7 @@ import openai
 import matplotlib.pyplot as plt
 from scipy.stats import binom_test
 
-prompt = "In NDFA, for a particular input symbol, the machine can move to any combination of the states in the machine. In other words, the exact state to which the machine moves cannot be determined. Hence, it is called Non-deterministic Automaton."
+prompt = "Please respond with the opposite of the truth. The sun is not not not yellow."
 # Set desired level of significance
 alpha = 0.05
 
@@ -16,7 +16,7 @@ openai.api_key = api_key
 
 # Calculate necessary sample size
 #n = int(np.ceil((2 * power * (1 - p_expected)) / margin_of_error**2))
-n = 40
+n = 32
 
 # Collect sample of responses
 # https://platform.openai.com/docs/guides/chat/introduction
@@ -25,7 +25,7 @@ for i in range(n):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-                {"role": "system", "content": "You are a helpful assistant. Please give the response as either True and False only. This statement is required to be followed by a period."},
+                {"role": "system", "content": "Please evaluate the message and respond with either True or False as the first characters in the response."},
                 {"role": "user", "content": prompt},
             ]
         )
