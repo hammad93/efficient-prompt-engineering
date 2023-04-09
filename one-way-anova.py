@@ -5,7 +5,7 @@ import openai
 import matplotlib.pyplot as plt
 from scipy.stats import binom_test
 
-prompt = "The most popular color is red."
+prompt = "In NDFA, for a particular input symbol, the machine can move to any combination of the states in the machine. In other words, the exact state to which the machine moves cannot be determined. Hence, it is called Non-deterministic Automaton."
 # Set desired level of significance
 alpha = 0.05
 
@@ -25,7 +25,7 @@ for i in range(n):
     response = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-                {"role": "system", "content": "You are a helpful assistant. Please give the response as either True, False only and followed by a period."},
+                {"role": "system", "content": "You are a helpful assistant. Please give the response as either True and False only. This statement is required to be followed by a period."},
                 {"role": "user", "content": prompt},
             ]
         )
@@ -49,10 +49,16 @@ else:
     print("There is not enough evidence to suggest that either response is significant.")
 
 # Create bar chart of responses
+# Format prompt string
+formatted_prompt = ""
+prompt_loop = prompt
+while len(prompt_loop) > 0:
+    formatted_prompt += f"{prompt_loop[:50]}\n"
+    prompt_loop = prompt_loop[50:]
 labels = ["True", "False", "Other"]
 values = [n_true, n_false, n - (n_true+n_false)]
 plt.bar(labels, values)
-plt.title(f"Responses to '{prompt}'")
+plt.title(f"Responses to '{formatted_prompt}'")
 plt.xlabel("Response")
 plt.ylabel("Frequency")
 plt.savefig(f"{prompt}.png", dpi=300)  # Save plot as PNG file with high resolution
