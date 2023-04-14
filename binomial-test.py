@@ -55,6 +55,7 @@ prompt_loop = prompt
 while len(prompt_loop) > 0:
     formatted_prompt += f"{prompt_loop[:50]}\n"
     prompt_loop = prompt_loop[50:]
+formatted_prompt = formatted_prompt[:-2]
 labels = ["True", "False", "Other"]
 values = [n_true, n_false, n - (n_true+n_false)]
 plt.bar(labels, values)
