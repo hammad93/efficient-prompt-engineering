@@ -2,6 +2,9 @@
 Scripts that can output compressed and efficient prompts for scalable usage in chat based generative models including ChatGPT
 
 ## Example
+
+![True or False Statement](Please respond with the opposite of the truth. The sun is not not not yellow..png.png)
+
 Copy and paste this into ChatGPT for some song lyrics.
 
 ```
